@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Starter package for Redux with React and Babel support",
   "main": "index.js",
-  "repository": "",
+  "repository": "https://github.com/websolutionslab/webpack-starter-kit",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test"
