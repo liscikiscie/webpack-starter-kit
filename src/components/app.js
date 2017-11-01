@@ -29,7 +29,7 @@ export default class App extends Component {
 
     render() {
         return (
-            <div>React App</div>
+            <div>React Apps</div>
         );
     }
 }
