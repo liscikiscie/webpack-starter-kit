@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-
 
 module.exports = {
     entry: [
@@ -11,10 +11,13 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/'
+
     },
-    devtool: 'inline-source-map',
+    resolve: {
+        extensions: [ '.js', '.jsx' ]
+    },
     devServer: {
-        historyApiFallback: true,
+        hot: true,
         contentBase: './'
     },
     module: {
@@ -55,9 +58,10 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 query: {
-                    presets: [ 'es2015' ]
+                    presets: [ 'react', 'es2015', 'stage-1', 'es2017' ]
                 }
             },
+
             {
                 test: /\.html$/,
                 use: [
@@ -80,4 +84,5 @@ module.exports = {
         new CleanWebpackPlugin([ 'dist' ]),
         new webpack.HotModuleReplacementPlugin()
     ]
+
 };
